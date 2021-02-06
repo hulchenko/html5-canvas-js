@@ -5,6 +5,10 @@ const ctx = canvas.getContext('2d'); //you don't draw on canvas element, you dra
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+ctx.font = "bold 50px Arial";
+ctx.fillText("Start Drawing!", 960, 240);
 //The strokeStyle property sets or returns the color, gradient, or pattern used for strokes.
 ctx.strokeStyle = 'red';
 
@@ -36,10 +40,10 @@ function draw(e) {
 
    //drawing now always starts at 0, we need to update our lastX/lastY to the e.offsetX/e.offsetY positions:
    //Variant #1:
-   //lastX = e.offsetX;
-   //lastY = e.offsetY;
+   lastX = e.offsetX;
+   lastY = e.offsetY;
    //Variant #2(destructuring array):
-   [lastX, lastY] = [e.offsetX, e.offsetY];
+   //[lastX, lastY] = [e.offsetX, e.offsetY];
    hue++;
     if (hue>=360){
         hue = 0;//since hue is only 0 - 360, we want to reset it back to 0 once it's at 360, not to overload the CPU(?)
