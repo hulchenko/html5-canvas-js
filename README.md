@@ -1,0 +1,1 @@
+This is the 8th JS project out of 30 JS Challenge.
